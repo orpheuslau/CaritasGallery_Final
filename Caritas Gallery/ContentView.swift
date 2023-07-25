@@ -128,7 +128,7 @@ struct ContentView : View {
                 
                 .edgesIgnoringSafeArea(.all)
                     .onAppear {
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { //entity model loaded async
                             cancellable = Entity.loadModelAsync(named: "Asset 5.usdz").sink(
                                 receiveCompletion: { completion in
                                     if case let .failure(error) = completion {
