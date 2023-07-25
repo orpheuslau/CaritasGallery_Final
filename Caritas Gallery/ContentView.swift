@@ -55,6 +55,7 @@ struct ARViewContainer: UIViewRepresentable {
 
 struct ContentView : View {
    
+   
     @State var isPresent: Bool = true
     @State private var showAlert = false
     @ObservedObject var arViewModel : ARViewModel = ARViewModel()
@@ -62,6 +63,7 @@ struct ContentView : View {
     @State private var showOverlay = true
     @State var isReady: Bool = false
     @State var cancellable: AnyCancellable? = nil
+    @State private var isFlashVisible = false
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -71,6 +73,17 @@ struct ContentView : View {
                 }
             
             VStack{
+                if isFlashVisible {
+                          Text("Photo saved")
+                        .foregroundColor(.blue)
+                        .onAppear(){
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                isFlashVisible = false
+                            }
+                        }
+                      }
+                
+                
                 if ARVariables.isRemind
                 {
                     Text("Please tap to place Caritas Gallery logo")
@@ -79,8 +92,10 @@ struct ContentView : View {
                         .padding(.bottom, 300)
                     
                 }
+                
                   Button (action:  {
                       showAlert = true
+                      isFlashVisible = true
                       ARVariables.arView.snapshot(saveToHDR: false) { (image) in
                           let compressedImage = UIImage(data: (image?.pngData())!)
                           UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
@@ -96,21 +111,7 @@ struct ContentView : View {
                           .padding()
                       
                   })
-                  .alert(isPresented: $showAlert, content: {
-                      Alert(
-                                     title: Text("Photo is saved"),
-                                     message: Text("You may continue or exit"),
-                                     primaryButton: .destructive(Text("Exit")) {
-                                         UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
-                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                             exit(0)
-                                         }
-                                     },
-                                     secondaryButton: .default(Text("Continue"))
-                            )
-                          })
               }
-            
             
             if showOverlay {
                 ZStack {
@@ -135,7 +136,7 @@ struct ContentView : View {
                                     }
                                     self.cancellable?.cancel()
                                 }, receiveValue: { [self] (model: Entity) in
-                                    print("model loaded !!")
+                                    //print("model loaded !!")
                                     self.isReady = true
                                     ARVariables.myEnt = model
                                 })

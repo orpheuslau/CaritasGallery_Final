@@ -13,6 +13,7 @@
 		715E46192A0A7BF900F6F512 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 715E46182A0A7BF900F6F512 /* Preview Assets.xcassets */; };
 		715E46212A0A82ED00F6F512 /* Asset 5.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 715E46202A0A82ED00F6F512 /* Asset 5.usdz */; };
 		719BB5142A0E8AC10092DC07 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 719BB5132A0E8AC10092DC07 /* Experience.rcproject */; };
+		71ED239F2A12158D0082B641 /* CaritasGallery-test3-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 715E461F2A0A7C9B00F6F512 /* CaritasGallery-test3-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				715E46212A0A82ED00F6F512 /* Asset 5.usdz in Resources */,
+				71ED239F2A12158D0082B641 /* CaritasGallery-test3-Info.plist in Resources */,
 				715E46192A0A7BF900F6F512 /* Preview Assets.xcassets in Resources */,
 				715E46162A0A7BF900F6F512 /* Assets.xcassets in Resources */,
 			);
@@ -277,14 +279,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Caritas Gallery/Preview Content\"";
 				DEVELOPMENT_TEAM = DFXGBHN7HG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CaritasGallery-test3-Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "For AR effect";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "For AR effect";
+				INFOPLIST_KEY_CFBundleDisplayName = "Caritas Gallery AR";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed for AR feature";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Additional usage of photo library is needed for saving screen capture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -295,8 +299,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "orpheus.CaritasGallery-test3";
+				MARKETING_VERSION = 1.1;
+				"MARKETING_VERSION[sdk=iphoneos*]" = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = orpheus.CaritasGalleryAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -310,14 +315,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Caritas Gallery/Preview Content\"";
 				DEVELOPMENT_TEAM = DFXGBHN7HG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "CaritasGallery-test3-Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "For AR effect";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "For AR effect";
+				INFOPLIST_KEY_CFBundleDisplayName = "Caritas Gallery AR";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is needed for AR feature";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Additional usage of photo library is needed for saving screen capture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -328,8 +335,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "orpheus.CaritasGallery-test3";
+				MARKETING_VERSION = 1.1;
+				"MARKETING_VERSION[sdk=iphoneos*]" = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = orpheus.CaritasGalleryAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
